@@ -3,6 +3,31 @@ html, body {
   position: relative;
 }
 
+.down {
+  position: fixed;
+  top: 120px;
+  left: 0px;
+  background-color: white;
+  color: black;
+  border: 0;
+  width: 100px;
+  height: 100px;
+  z-index: 9000;
+}
+
+.up {
+  position: fixed;
+  top: 220px;
+  left: 0px;
+  background-color: white;
+  color: black;
+  border: 0;
+  width: 100px;
+  height: 100px;
+  z-index: 9000;
+}
+
+
 
 .holder {
   perspective: 600px;
@@ -27,6 +52,14 @@ html, body {
     z-index: 1000;
     transition: all 600ms ease-in-out;
 
+    &.pre {
+      -webkit-transform: rotateX( -17deg ) translateX(-50%) translateY(30%);
+      -moz-transform: rotateX( -17deg ) translateX(-50%) translateY(30%);
+      -o-transform: rotateX( -17deg ) translateX(-50%) translateY(30%);
+      transform: rotateX( -17deg ) translateX(-50%) translateY(30%);
+      z-index: 450;
+      opacity: 0;
+    }
 
 
     &.base {
