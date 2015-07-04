@@ -1,6 +1,7 @@
 html, body {
   background-color: #0B486B;
   position: relative;
+
 }
 
 .down {
@@ -28,10 +29,15 @@ html, body {
 }
 
 
+.slider {
+  height: 5000px;
+}
 
 .holder {
   perspective: 600px;
-  position: relative;
+  position: fixed;
+  top: 0;
+  left: 0;
   height: 100vh;
   width: 100vw;
   background-color: #0B486B;
@@ -41,9 +47,9 @@ html, body {
     width: 80%;
     min-height: 600px;
     margin: 0 auto;
-    position: absolute;
+    position: fixed;
     left: 50%;
-    bottom: 0;
+    top: 25%;
     -webkit-transform: rotateX( -5deg ) translateX(-50%);
     -moz-transform: rotateX( -5deg ) translateX(-50%);
     -o-transform: rotateX( -5deg ) translateX(-50%);
@@ -117,13 +123,33 @@ html, body {
       opacity: .8;
     }
 
+    &.post {
+      -webkit-transform: rotateX( 2.5deg ) translateX(-50%) translateY(-30%) scale(0.6);
+      -moz-transform: rotateX( 2.5deg ) translateX(-50%) translateY(-30%) scale(0.6);
+      -o-transform: rotateX( 2.5deg ) translateX(-50%) translateY(-30%) scale(0.6);
+      transform: rotateX( .25deg ) translateX(-50%) translateY(-30%) scale(0.6);
+      z-index: 400;
+      opacity: 0;
+    }
+
     &:hover {
-      -webkit-transform: rotateX( 0deg ) translateX(-50%) translateY(-50%) scale(1);
-      -moz-transform: rotateX( 0deg ) translateX(-50%) translateY(-50%) scale(1);
-      -o-transform: rotateX( 0deg ) translateX(-50%) translateY(-50%) scale(1);
-      transform: rotateX( 0deg ) translateX(-50%) translateY(-50%) scale(1);
+      -webkit-transform: translateX(-50%) translateY(-25%) scale(1);
+      -moz-transform: translateX(-50%) translateY(-25%) scale(1);
+      -o-transform: translateX(-50%) translateY(-25%) scale(1);
+      transform: translateX(-50%) translateY(-25%) scale(1);
       opacity: 1;
     }
+
+    &.pre {
+      &:hover {
+        opacity: 0;
+        -webkit-transform: none;
+        -moz-transform: none;
+        -o-transform: none;
+        transform: none;
+      }
+    }
+
 
 
   }
